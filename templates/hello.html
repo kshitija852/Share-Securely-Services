@@ -1,0 +1,25 @@
+
+<h1>Group Page!!</h1>
+<body>
+  {% if msg %}
+  <p class=msg><h2><strong>Message:</strong> {{ msg }}</h2>
+  {% endif %}
+  {% if error %}
+  <p class=error><h2><strong>Error:</strong> {{ error }}</h2>
+  {% endif %}
+  {% for message in get_flashed_messages() %}
+  <h2>{{ message }}</h2>
+  {% endfor %}
+
+              
+  <form action="{{ url_for('group_user')}}" method="post">
+  <button name="loginname" type="submit" value={{user}}>Photos</button>
+  <button name="loginname" type="submit" value={{user}}>Poetry</button>
+  <button name="loginname" type="submit" value={{user}}>Movies</button>
+  <button name="loginname" type="submit" value={{user}}>Application Files</button>
+          
+   </form>
+
+  
+</body>
+

@@ -1,0 +1,40 @@
+
+<h1>Admin Page!!</h1>
+<body>
+  {% if msg %}
+  <p class=msg><h2><strong>Message:</strong> {{ msg }}</h2>
+  {% endif %}
+  {% if error %}
+  <p class=error><h2><strong>Error:</strong> {{ error }}</h2>
+  {% endif %}
+  {% for message in get_flashed_messages() %}
+  <h2>{{ message }}</h2>
+  {% endfor %}
+  
+ <br> <br>
+ {% if rows %}
+      <table id='customers'>
+         <tr>
+            <th><b>loginname</b></th>
+            <th><b>is_user</b></th>
+     
+         </tr>
+         {% for col in rows %}
+         <tr>
+            <td>{{col[0]}}</td>
+            <td>
+              
+            <form action="{{ url_for('admin')}}" method="post">
+            <button name="loginname" type="submit" value={{col[0]}}>Activate</button>  
+            </td>
+         </tr>
+         {% endfor %}
+         
+      </table> 
+      
+    </form>
+ {% endif %}    
+
+
+</body>
+

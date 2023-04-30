@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Registration Form</h2>
+  {% for field, errors in form.errors.items() %}
+  {{ ', '.join(errors) }}
+  {% endfor %}
+  <form class="form-horizontal" method="POST" action="">
+      <div class="form-group">
+          {{ form.name.label }}
+          {{ form.name(class="form-control") }}
+      </div>
+      <div class="form-group">
+          {{ form.loginname.label }}
+          {{ form.loginname(class="form-control") }}
+      </div>
+      <div class="form-group">
+          {{ form.password.label }}
+          {{ form.password(class="form-control") }}
+      </div>
+      <div class="form-group">
+          {{ form.confirm.label }}
+          {{ form.confirm(class="form-control") }}
+      </div>
+      <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+  </form>
+</div>

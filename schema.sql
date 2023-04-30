@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS users;
+    
+CREATE TABLE users (name TEXT NOT NULL, loginname TEXT PRIMARY KEY, password TEXT NOT NULL, is_admin BOOLEAN NOT NULL DEFAULT 'FALSE', is_user BOOLEAN NOT NULL DEFAULT 'FALSE');
+
+DROP TABLE IF EXISTS groups;
+
+CREATE TABLE groups(group_id int PRIMARY KEY, group_name TEXT NOT NULL);
+
+DROP TABLE IF EXISTS group_user;
+
+CREATE TABLE group_user(loginname TEXT, group_id int, status BOOLEAN NOT NULL DEFAULT 'FALSE');

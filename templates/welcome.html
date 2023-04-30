@@ -1,0 +1,16 @@
+<h1>Group Joined Page!!</h1>
+<body>
+  {% if msg %}
+  <p class=msg><h2><strong>Message:</strong> {{ msg }}</h2>
+  {% endif %}
+  {% if error %}
+  <p class=error><h2><strong>Error:</strong> {{ error }}</h2>
+  {% endif %}
+  {% for message in get_flashed_messages() %}
+  <h2>{{ message }}</h2>
+  {% endfor %}
+
+            
+
+</body>
+
